@@ -5,20 +5,20 @@
 class Lizz < Formula
   desc "CLI to facilitate the management of a Flux2 k8s cluster"
   homepage "https://github.com/openlizz/lizz"
-  version "0.0.1-alpha.3"
+  version "0.0.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Openlizz/lizz/releases/download/v0.0.1-alpha.3/lizz_0.0.1-alpha.3_darwin_arm64.tar.gz"
-      sha256 "3ccbc593844aadcb962d2f69cdc85d7273ac7a4ab0e553b43e1893d7b43cc513"
+    if Hardware::CPU.intel?
+      url "https://github.com/Openlizz/lizz/releases/download/v0.0.1/lizz_0.0.1_darwin_amd64.tar.gz"
+      sha256 "b133616eba83070891683c916ea95033c6787a9f5f33d37e622aac1bbb654fd0"
 
       def install
         bin.install "lizz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Openlizz/lizz/releases/download/v0.0.1-alpha.3/lizz_0.0.1-alpha.3_darwin_amd64.tar.gz"
-      sha256 "3fb286e0d50c045a22a1536e15293179d046c5875c8b0500980d2180a265a9a8"
+    if Hardware::CPU.arm?
+      url "https://github.com/Openlizz/lizz/releases/download/v0.0.1/lizz_0.0.1_darwin_arm64.tar.gz"
+      sha256 "343c7d286a4ef589233190bcf06807c007626f8d238cc0d2dfd9d5b76a4782ac"
 
       def install
         bin.install "lizz"
@@ -28,16 +28,16 @@ class Lizz < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/Openlizz/lizz/releases/download/v0.0.1-alpha.3/lizz_0.0.1-alpha.3_linux_amd64.tar.gz"
-      sha256 "03fe0def9de42c8755f94ee01f79d94e45bbdd9b2d7f9cfded0c1515aeab8cd9"
+      url "https://github.com/Openlizz/lizz/releases/download/v0.0.1/lizz_0.0.1_linux_amd64.tar.gz"
+      sha256 "648096a17d704bdf340871f977bf7b85726f00ac63e51753a5564fc19be8b714"
 
       def install
         bin.install "lizz"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Openlizz/lizz/releases/download/v0.0.1-alpha.3/lizz_0.0.1-alpha.3_linux_arm64.tar.gz"
-      sha256 "847be488fcca69c9279cbb5edd0864f27092cc48e2fa5b9ec6c4e15bb5cff983"
+      url "https://github.com/Openlizz/lizz/releases/download/v0.0.1/lizz_0.0.1_linux_arm64.tar.gz"
+      sha256 "86c27c44886a9bbcfadef47d7f68b1ba8332e8f6a41cfbf6ac8bc8399de7cf53"
 
       def install
         bin.install "lizz"
