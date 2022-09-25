@@ -10,7 +10,7 @@ class Lizz < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/Openlizz/lizz/releases/download/v0.0.1/lizz_0.0.1_darwin_amd64.tar.gz"
-      sha256 "b133616eba83070891683c916ea95033c6787a9f5f33d37e622aac1bbb654fd0"
+      sha256 "fade92f541f7d76cbc50c5a44735dd8e1ca59c2a37ad566bb3c60c3ec95ccf9d"
 
       def install
         bin.install "lizz"
@@ -18,7 +18,7 @@ class Lizz < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/Openlizz/lizz/releases/download/v0.0.1/lizz_0.0.1_darwin_arm64.tar.gz"
-      sha256 "343c7d286a4ef589233190bcf06807c007626f8d238cc0d2dfd9d5b76a4782ac"
+      sha256 "a25e6eccabc0c049d324d30ce01b8044bb5aad0424d611fe7effeee171b7b1c9"
 
       def install
         bin.install "lizz"
@@ -27,17 +27,17 @@ class Lizz < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Openlizz/lizz/releases/download/v0.0.1/lizz_0.0.1_linux_amd64.tar.gz"
-      sha256 "648096a17d704bdf340871f977bf7b85726f00ac63e51753a5564fc19be8b714"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Openlizz/lizz/releases/download/v0.0.1/lizz_0.0.1_linux_arm64.tar.gz"
+      sha256 "6edaa735044aa8855ef273a0b3dee71c9612b9dabe84427662c426e286881610"
 
       def install
         bin.install "lizz"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Openlizz/lizz/releases/download/v0.0.1/lizz_0.0.1_linux_arm64.tar.gz"
-      sha256 "86c27c44886a9bbcfadef47d7f68b1ba8332e8f6a41cfbf6ac8bc8399de7cf53"
+    if Hardware::CPU.intel?
+      url "https://github.com/Openlizz/lizz/releases/download/v0.0.1/lizz_0.0.1_linux_amd64.tar.gz"
+      sha256 "4d69a10141a0e5fd1949252d5536f35b7f82bbfb0fcb64aade9e140e9e209536"
 
       def install
         bin.install "lizz"
